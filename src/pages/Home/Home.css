@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo__head {
+    width: 218px;
+    height: 83px;
+}
+
+.title__navigate {
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.title__li {
+    margin-top: 32px;
+    padding-left: 10px;
+    justify-content: center;
+
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Makazi Text', sans-serif;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+
+    height: 548px;
+    background-color: rgba(23, 1, 1, 0.54);
+}
+
+footer h1 {
+    /*padding-bottom: 100px;*/
+    font-size: 20px;
+    font-family: 'Karla', serif;
+    color: #495E57;
+    /*padding-bottom: 20px;*/
+}
+
+
+footer li {
+    list-style: none;
+
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 50px;
+
+}
+
+/* ===== Адаптив ===== */
+/* ===== АДАПТИВНАЯ ВЁРСТКА ===== */
+
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 1024px) {
+    .aboutUs {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .about-text {
+        max-width: 90%;
+        font-size: 18px;
+    }
+
+    .aboutUs h2 {
+        padding-bottom: 30px;
+    }
+
+    .about-images {
+        margin-top: 20px;
+    }
+
+    .image-front {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .footer_sections {
+        text-align: center;
+    }
+
+    footer h1 {
+        padding-bottom: 10px;
+    }
+}
+
+/* Смартфоны и устройства до 768px */
+@media (max-width: 768px) {
+    .title {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .title-text {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .title-text h1 {
+        font-size: 48px;
+    }
+
+    .title-text h2 {
+        font-size: 28px;
+    }
+
+    .title img {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+
+    .specials_container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .specials_title {
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .specials {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .testimonials__wrapper {
+        height: auto;
+        padding: 0 20px;
+    }
+
+    .feedback__container {
+        padding-top: 40px;
+    }
+
+    .feedback__cards {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-text h1 {
+        font-size: 36px;
+    }
+
+    .title-text h2 {
+        font-size: 20px;
+    }
+
+    .aboutUs h1 {
+        font-size: 28px;
+    }
+
+    .aboutUs h2 {
+        font-size: 18px;
+    }
+
+    .card h2,
+    .card p,
+    .card a {
+        font-size: 14px;
+    }
+
+    footer h1 {
+        font-size: 18px;
+    }
+
+    footer a {
+        font-size: 14px;
+    }
+}

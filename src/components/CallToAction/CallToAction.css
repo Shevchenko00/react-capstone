@@ -1,0 +1,74 @@
+.title {
+    position: relative;
+    width: 100%;
+    height: 513px;
+    background-color: rgba(73, 94, 87, 1);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.title-text h1 {
+    color: black;
+    font-size: 64px;
+    font-family: 'Makazi Text', serif;
+    font-weight:650;
+}
+
+.title-text h2 {
+    color: black;
+    font-size: 40px;
+    font-family: 'Makazi Text', serif;
+    padding-bottom: 15px;
+    font-weight:300;
+}
+.title-text p {
+    color: black;
+    font-size: 16px;
+    font-family: 'Karla', serif;
+    font-weight: bold;
+    padding-bottom: 35px;
+}
+
+.btn {
+    background-color: #F4CE14;
+    outline: none;
+    border: none;
+    width: 224px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    box-shadow: 0 1px 2px rgb(18, 26, 2);
+    transform: translateY(1px);
+}
+
+.btn:hover {
+    opacity: 70%;
+}
+
+
+.title-text {
+    max-width: 50%;
+    padding-left: 200px;
+    text-align: left;
+    color: white;
+    z-index: 1;
+}
+
+.title img {
+    position: absolute;
+    border-radius: 20px;
+    right: 40px;
+    bottom: -50px;
+    height: 513px;
+    width: 377px;
+    object-fit: cover;
+    z-index: 0;
+}

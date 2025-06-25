@@ -1,0 +1,50 @@
+.aboutUs {
+    height: 558px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.aboutUs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+}
+
+.aboutUs h1{
+    font-size: 48px;
+    font-weight: bold;
+    justify-content: center;
+}
+.aboutUs h2 {
+    padding-bottom: 80px;
+}
+.about-text {
+    max-width: 50%;
+    font-size: 20px;
+
+}
+
+.about-images {
+    position: relative;
+    width: fit-content;
+}
+
+.image-back {
+    width: 280px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.image-front {
+    width: 280px;
+    height: auto;
+    position: absolute;
+    top: 60px;      /* сдвиг вниз */
+    left: -100px;    /* сдвиг влево */
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
