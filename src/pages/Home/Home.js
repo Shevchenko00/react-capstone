@@ -28,7 +28,7 @@ const Home = () => {
                         <li className='title__li'><a href='#'>Home</a></li>
                         <li className='title__li'><a href='#'>About</a></li>
                         <li className='title__li'><a href='#'>Menu</a></li>
-                        <li className='title__li'><a href='#'>Reservations</a></li>
+                        <li className='title__li'><a href='/booking'>Reservations</a></li>
                         <li className='title__li'><a href='#'>Order Online</a></li>
                         <li className='title__li'><a href='#'>Login</a></li>
                     </ul>
@@ -48,11 +48,11 @@ const Home = () => {
                         Navigation</h1>
                     <NavSection>
                         <ul>
-                            <li><a href='#'>Home</a></li>
+                            <li><a href='/booking'>Home</a></li>
                             <li><a href='#'>About</a></li>
                             <li><a href='#'>Menu</a></li>
-                            <li><a href='#'>Reservations</a></li>
-                            <li><a href='#'>Order Online</a></li>
+                            <li><a href='/booking'>Reservations</a></li>
+                            <li><a href='/booking'>Order Online</a></li>
                             <li><a href='#'>Login</a></li>
                         </ul>
                     </NavSection>
