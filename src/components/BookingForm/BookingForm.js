@@ -1,17 +1,38 @@
-import './BookingForm.css'
-import { useState } from "react";
+/* global fetchAPI, submitAPI */
 
-const BookingForm = ({ availableTimes=[], dispatch }) => {
+import {fetchAPI, submitAPI} from "../../api/api";
+import './BookingForm.css';
+import { useEffect, useState } from "react";
+
+const BookingForm = ({submitForm}) => {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
-    const [countGuest, setCountGuest] = useState(0);
+    const [availableTimes, setAvailableTimes] = useState([]);
+    const [countGuest, setCountGuest] = useState(1);
     const [occasion, setOccasion] = useState('');
     const [agree, setAgree] = useState(false);
     const [errors, setErrors] = useState({});
 
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        setDate(formattedDate);
+
+        const times = fetchAPI(today);  // fetchAPI возвращает массив сразу
+        setAvailableTimes(times);
+    }, []);
+
+
+    const handleDateChange = (e) => {
+        const newDate = e.target.value;
+        setDate(newDate);
+        const times = fetchAPI(new Date(newDate));
+        setAvailableTimes(times);
+        setTime('');
+    };
+
     const validate = () => {
         const newErrors = {};
-
         if (!date) newErrors.date = 'Please choose a date';
         if (!time) newErrors.time = 'Please choose a time';
         if (!countGuest || countGuest < 1) newErrors.countGuest = 'Please enter at least 1 guest';
@@ -19,27 +40,20 @@ const BookingForm = ({ availableTimes=[], dispatch }) => {
         if (!agree) newErrors.agree = 'You must agree to the terms';
 
         setErrors(newErrors);
-
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!validate()) return;
-
-        console.log('Booking submitted:', { date, time, countGuest, occasion, agree });
-        alert('Reservation confirmed!');
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (validate()) {
+            submitForm({ date, time, countGuest, occasion, agree });
+        }
     };
 
-    const handleDateChange = (e) => {
-        const newDate = e.target.value;
-        setDate(newDate);
-        dispatch({ type: "UPDATE_DATE", payload: newDate });
-    };
+
 
     return (
         <form onSubmit={handleSubmit}>
-
             <label htmlFor="res-date">Choose date</label>
             <input
                 type="date"
@@ -68,9 +82,9 @@ const BookingForm = ({ availableTimes=[], dispatch }) => {
             <input
                 type="number"
                 id="guests"
-                placeholder="1"
                 min="1"
                 max="10"
+                value={countGuest}
                 onChange={(e) => setCountGuest(Number(e.target.value))}
             />
             {errors.countGuest && <p className="error">{errors.countGuest}</p>}
@@ -82,8 +96,8 @@ const BookingForm = ({ availableTimes=[], dispatch }) => {
                 onChange={(e) => setOccasion(e.target.value)}
             >
                 <option value="" disabled>Select occasion</option>
-                <option>Birthday</option>
-                <option>Anniversary</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
             </select>
             {errors.occasion && <p className="error">{errors.occasion}</p>}
 
